@@ -33,18 +33,19 @@ export const Chatbot = () => {
 
     return (
         <div>
+            <div className='chatbot__messages'>
+                {
+                    test.length > 0 ? test.map(msg => {
+                        return (
+                            <div key={msg.time}>
+                                <p>{msg.message}</p>
+                            </div>
+                        )
+                    }) : null
+                }
+            </div>
 
-            {
-                test.length > 0 ? test.map(msg => {
-                    return (
-                        <div key={msg.time}>
-                            <p>{msg.message}</p>
-                        </div>
-                    )
-                }) : null
-            }
-
-            <form>
+            <form className='chatbot'>
                 <label htmlFor='message'>Chat</label>
                 <input 
                     type='text'

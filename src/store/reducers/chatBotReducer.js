@@ -8,9 +8,23 @@ import {
 
 const initialState = {
     counter: 0,
-    test: [{
-        message: ''
-    }],
+    test: [
+        {
+            message: '1. Services'
+        },
+        {
+            message: '2. About'
+        },
+        {
+            message: '3. Contact'
+        },
+        {
+            message: '4. Other'
+        },
+        {
+            message: '----------'
+        },
+],
     wildcard: {}
 }
 

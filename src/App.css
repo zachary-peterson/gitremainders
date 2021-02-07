@@ -1,8 +1,38 @@
+body {
+  background-color: #f4f9f9;
+}
+
 .chatbot__container {
+  margin: 0 auto;
+  width: 70%;
   display: flex;
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  flex-direction: column;
+}
+
+.chatbot {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 1.75rem;
+}
+
+.chatbot__messages {
+  height: 50vh;
+  font-family: 'Abel', sans-serif;
+  font-size: 2rem;
+}
+
+.chatbot input {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.chatbot button {
+  width: 25%;
+  margin: 0 auto; 
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 1.5rem;
 }
 
 .header {
