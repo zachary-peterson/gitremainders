@@ -7,7 +7,7 @@ import {
 const initialState = {
     isLoading: false,
     videoErrors: '',
-    video: 1,
+    video: 0,
     part: 0.1
 }
 
@@ -17,7 +17,7 @@ export const heroReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                video: state.video * action.payload
+                video: Math.round(state.video + action.payload)
             }
         case IS_LOADING:
             return {
@@ -27,7 +27,7 @@ export const heroReducer = (state = initialState, action) => {
         case RESET_VIDEO:
             return {
                 ...state,
-                video: 1
+                video: 0
             }
         default:
             return state;

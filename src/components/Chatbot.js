@@ -28,6 +28,7 @@ export const Chatbot = () => {
         chatFunction.time = counter;
         chatFunction.wildcard = mName;
         dispatch(chatFunctionality(chatFunction));
+        setChatFunction(form)
     }
 
     return (

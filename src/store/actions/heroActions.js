@@ -3,7 +3,7 @@ export const IS_LOADING = 'IS_LOADING';
 export const RESET_VIDEO = 'RESET_VIDEO';
 
 export const sliderTransition = () => (dispatch) => {
-    dispatch({ type: ADD_TO_VIDEO, payload: 2 });
+    dispatch({ type: ADD_TO_VIDEO, payload: 1 });
 };
 
 export const resetSlider = () => (dispatch) => {
