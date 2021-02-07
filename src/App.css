@@ -13,7 +13,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  font-family: 'Big Shoulders Display', cursive;
+  font-family: 'Abel', sans-serif;
   font-size: 1.75rem;
 }
 
@@ -31,7 +31,7 @@ body {
 .chatbot button {
   width: 25%;
   margin: 0 auto; 
-  font-family: 'Big Shoulders Display', cursive;
+  font-family: 'Abel', sans-serif;
   font-size: 1.5rem;
 }
 

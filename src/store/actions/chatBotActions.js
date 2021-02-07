@@ -19,16 +19,25 @@ export const chatFunctionality = (msg) => (dispatch) => {
     // if you take the timeout off the responses will be
     // instantaneous
     setTimeout(() => {
-        if(msg.time === 0) {
-            dispatch({ type: CHAT, payload: {message: "Hello, World"}});
-        }else if(msg.time > 0) {
-            if(msg.message.includes("are you")) {
-                dispatch({ type: CHAT, payload: {message: "Doing well thank you"}});
-            }else if(msg.message.includes("what's up") || msg.message.includes("whats up")) {
-                dispatch({ type: CHAT, payload: {message: "Chilling, yeah."}});
-            }
-        }else if(msg.time >= 1) {
-            
+        dispatch({ type: CHAT, payload: {message: "Hello, World"}});
+        
+        if(msg.message.includes("are you")) {
+            dispatch({ type: CHAT, payload: {message: "Doing well thank you"}});
+        }else if(msg.message.includes("what's up") || msg.message.includes("whats up")) {
+            dispatch({ type: CHAT, payload: {message: "Chilling, yeah."}});
+        }else if(msg.message.includes("1") || msg.message.includes("services") || msg.message.includes("Services")) {
+            dispatch({ type: CHAT, payload: {message: "All services are time permitting."}});
+            dispatch({ type: CHAT, payload: {message: "Consultations on freelance web design and development projects."}});
+            dispatch({ type: CHAT, payload: {message: "Open to taking on new film projects, looking for individuals interested in being interviewed."}});
+
+        }else if(msg.message.includes("2") || msg.message.includes("about") || msg.message.includes("About")) {
+            dispatch({ type: CHAT, payload: {message: "Zip consulting is a technology consulting company, specializing in Redux and action based design."}});
+        }else if(msg.message.includes("3") || msg.message.includes("contact") || msg.message.includes("Contact")) {
+            dispatch({ type: CHAT, payload: {message: "Email Address:"}});
+            dispatch({ type: CHAT, payload: {message: "zachary@zpwrites.com"}});
+        }else if(msg.message.includes("4") || msg.message.includes("other") || msg.message.includes("Other")) {
+            dispatch({ type: CHAT, payload: {message: "Random Quote:"}});
+            dispatch({ type: CHAT, payload: {message: "...but simply recall that it is through sin that one first catches sight of salvation."}});
         }
     }, 2000);
 }
