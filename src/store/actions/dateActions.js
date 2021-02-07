@@ -1,0 +1,4 @@
+export const RETURN_DATE = 'RETURN_DATE';
+export const RETURN_MONTH_NAME = 'RETURN_MONTH_NAME';
+export const RETURN_DAY_NAME = 'RETURN_DAY_NAME';
+

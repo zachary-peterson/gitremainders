@@ -1,0 +1,6 @@
+.chatbot__container {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
