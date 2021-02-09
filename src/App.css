@@ -21,6 +21,8 @@ body {
   height: 50vh;
   font-family: 'Abel', sans-serif;
   font-size: 2rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .chatbot input {

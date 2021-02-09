@@ -5,13 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-
-import {mainReducer} from './store';
-
-const store = createStore(mainReducer, applyMiddleware(thunk, logger))
+import {store} from './store'
 
 ReactDOM.render(
   <React.StrictMode>

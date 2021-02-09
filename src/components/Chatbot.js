@@ -16,7 +16,7 @@ export const Chatbot = () => {
     const counter = useSelector(state => state.chatBotReducer.counter)
     const mName = useSelector(state => state.dateReducer.mName);
 
-    console.log(mName);
+    // console.log(mName);
 
     const handleChanges = e => {
         e.preventDefault();

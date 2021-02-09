@@ -20,3 +20,13 @@ export {
     CONVERSATION_RESET,
     chatFunctionality
 } from './chatBotActions'
+
+export {
+    RESULTS_RES,
+    LOADING_SEARCH_RES
+} from './searchActions'
+
+export {
+    RETURN_INFORMATION,
+    PHILOSOPHY_ERRORS,
+} from './philosophyActions';

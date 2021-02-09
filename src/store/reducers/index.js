@@ -3,9 +3,11 @@ import { combineReducers } from "redux";
 import { heroReducer } from './heroReducer';
 import { dateReducer } from './dateReducer';
 import { chatBotReducer } from './chatBotReducer';
+import { philosophyReducer } from './philosophyReducer';
 
 export const mainReducer = combineReducers({
     heroReducer,
     dateReducer,
-    chatBotReducer
+    chatBotReducer,
+    philosophyReducer
 })
