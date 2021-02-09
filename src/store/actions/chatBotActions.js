@@ -38,6 +38,8 @@ export const chatFunctionality = (msg) => (dispatch) => {
         }else if(msg.message.includes("4") || msg.message.includes("other") || msg.message.includes("Other")) {
             dispatch({ type: CHAT, payload: {message: "Random Quote:"}});
             dispatch({ type: CHAT, payload: {message: "...but simply recall that it is through sin that one first catches sight of salvation."}});
+        }else {
+            dispatch({ type: CHAT, payload: {message: "Sorry, that response doesn't seem to register."}});
         }
     }, 2000);
 }

@@ -17,6 +17,8 @@ export const Landing = () => {
             }
         }, 15000);
     }, [video])
+
+    
     
     return (
         <>
