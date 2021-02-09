@@ -30,3 +30,19 @@ export {
     RETURN_INFORMATION,
     PHILOSOPHY_ERRORS,
 } from './philosophyActions';
+
+export {
+UPDATE_FNAME,
+UPDATE_LNAME,
+UPDATE_AGE
+} from './aboutActions'
+
+export {
+    TELL_A_JOKE,
+    RESET_JOKE
+} from './jokesActions'
+
+export {
+    SET_COMPONENT,
+    COMPONENT_LOADING
+} from './componentActions'

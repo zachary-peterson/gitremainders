@@ -4,6 +4,7 @@ import { resetSlider, sliderTransition } from '../store/actions';
 import { Chatbot } from './Chatbot';
 import img from '../assets/ZipConsulting.png';
 import axios from 'axios';
+import { About } from './About';
 
 const form = {
     terms: ''
@@ -14,6 +15,8 @@ export const Landing = () => {
     const [formValues, setFormValues] = useState(form);
     const dispatch = useDispatch();
     const video = useSelector(state => state.heroReducer.video)
+
+    // const fname = useSelector(state => state.aboutReducer.fname)
     
     // useEffect(() => {
     //     setTimeout(() => {
@@ -50,9 +53,17 @@ export const Landing = () => {
                      <button onClick={handleSubmit}>Submit</button>
                 </form> */}
             </section>
+            {video === 0 ? 
+            
             <div className='chatbot__container'>
                 <Chatbot />
             </div>
+            
+            :
+            null
+            }
+
+            {video === 1 ? <About /> : null}
             
             <footer>
 

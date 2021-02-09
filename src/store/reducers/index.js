@@ -4,10 +4,16 @@ import { heroReducer } from './heroReducer';
 import { dateReducer } from './dateReducer';
 import { chatBotReducer } from './chatBotReducer';
 import { philosophyReducer } from './philosophyReducer';
+import { aboutReducer } from './aboutReducer';
+import { jokesReducer } from './jokesReducer';
+import { componentReducer } from './componentReducer';
 
 export const mainReducer = combineReducers({
     heroReducer,
     dateReducer,
     chatBotReducer,
-    philosophyReducer
+    philosophyReducer,
+    aboutReducer,
+    jokesReducer,
+    componentReducer
 })

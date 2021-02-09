@@ -1,5 +1,10 @@
 import {store} from '../index'
 
+import {
+    SET_COMPONENT,
+    ADD_TO_VIDEO
+} from './index';
+
 export const CHAT = 'CHAT';
 export const CONVERSATION_ADD = 'CONVERSATION_ADD';
 export const CONVERSATION_MINUS = 'CONVERSATION_MINUS'
@@ -29,7 +34,10 @@ export const chatFunctionality = (msg) => (dispatch) => {
         const msgNumberPR = (dialogueOptions.chatBotReducer.test.length - 2);
         const previousResponse = dialogueOptions.chatBotReducer.test[msgNumberPR];
 
-        console.log(previousResponse);
+        const jokeOptions = (Math.floor(Math.random() * Math.floor(3)));
+        const quoteOptions = (Math.floor(Math.random() * Math.floor(7)));
+
+        console.log(dialogueOptions);
 
 
         if(msg.message.includes("hi") || msg.message.includes("Hi") || msg.message.includes("hello") || msg.message.includes("Hello") || msg.message.includes("hey") || msg.message.includes("Hey")) {
@@ -41,7 +49,7 @@ export const chatFunctionality = (msg) => (dispatch) => {
         }else if(msg.message.includes("what's up") || msg.message.includes("whats up")) {
             dispatch({ type: CHAT, payload: {message: "Well, hello"}});
             dispatch({ type: CHAT, payload: {message: "Chilling, yeah."}});
-        }else if(msg.message.includes("1") || msg.message.includes("services") || msg.message.includes("Services")) {
+        }else if(msg.message.includes("1")) {
             dispatch({ type: CHAT, payload: {message: "All services are time permitting. Consultations on freelance web design and development projects."}});
             dispatch({ type: CHAT, payload: {message: "Open to taking on new film projects, looking for individuals interested in being interviewed."}});
 
@@ -50,19 +58,44 @@ export const chatFunctionality = (msg) => (dispatch) => {
             dispatch({ type: CHAT, payload: {message: "Most time recently spent using Javascript."}});
         }else if(msg.message.includes("3") || msg.message.includes("contact") || msg.message.includes("Contact")) {
             dispatch({ type: CHAT, payload: {message: "Email Address:"}});
-            dispatch({ type: CHAT, payload: {message: "zachary@zpwrites.com"}});
+            dispatch({ type: CHAT, payload: {message: dialogueOptions.aboutReducer.email}});
+        }else if(msg.message.includes("another") && msg.message.includes("joke")) {
+            if(jokeOptions === 0) {
+                dispatch({ type: CHAT, payload: {message: dialogueOptions.jokesReducer.j1.p1 }})
+                dispatch({ type: CHAT, payload: {message: dialogueOptions.jokesReducer.j1.p2 }})
+            }else if(jokeOptions === 1) {
+                dispatch({ type: CHAT, payload: {message: dialogueOptions.jokesReducer.j2.q }})
+                setTimeout(() => {
+                    dispatch({ type: CHAT, payload: {message: dialogueOptions.jokesReducer.j2.a }})
+                }, 1500);
+            }else if(jokeOptions === 2) {
+                dispatch({ type: CHAT, payload: {message: dialogueOptions.jokesReducer.j3.q}})
+                dispatch({ type: CHAT, payload: {message: dialogueOptions.jokesReducer.j3.a }})
+            }
         }else if(msg.message.includes("4") || msg.message.includes("other") || msg.message.includes("Other")) {
-            dispatch({ type: CHAT, payload: {message: "Random Quote:"}});
-            dispatch({ type: CHAT, payload: {message: "...but simply recall that it is through sin that one first catches sight of salvation."}});
+            dispatch({ type: CHAT, payload: {message: dialogueOptions.philosophyReducer.p1.quotes[quoteOptions]}});
+            
+            dispatch({ type: CHAT, payload: {message: dialogueOptions.philosophyReducer.p1.fname + " " + dialogueOptions.philosophyReducer.p1.lname}});
         }else if(msg.message.includes("tell") && msg.message.includes("joke")) {
             dispatch({ type: CHAT, payload: {message: "Okay."}});
             dispatch({ type: CHAT, payload: {message: "Why was six afraid of seven?"}});
         }else if(msg.message.includes("why") && previousResponse.message === "Why was six afraid of seven?") {
             dispatch({ type: CHAT, payload: {message: "Because seven ate nine."}});
             dispatch({ type: CHAT, payload: {message: "Punny, right?"}});
-        }else {
+        }else if(msg.message.includes("services") || msg.message.includes("Services")) {
+            if(msg.message.includes("go")) {
+                dispatch({ type: CHAT, payload: {message: "Okay!"} });
+                dispatch({ type: CHAT, payload: {message: "Coming right up!"} });
+                dispatch({ type: SET_COMPONENT, payload: 1 });
+                dispatch({ type: ADD_TO_VIDEO, payload: 1 });
+            }else {
+                dispatch({ type: CHAT, payload: {message: "All services are time permitting. Consultations on freelance web design and development projects."}});
+                dispatch({ type: CHAT, payload: {message: "Open to taking on new film projects, looking for individuals interested in being interviewed."}});
+            }
+        }
+        else {
             dispatch({ type: CHAT, payload: {message: "Sorry, that response doesn't seem to register."}});
-            dispatch({ type: CHAT, payload: {message: "Please try again."}})
+            dispatch({ type: CHAT, payload: {message: "Please try again."}});
         }
     }, 2000);
 }
