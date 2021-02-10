@@ -4,10 +4,14 @@ import { useSelector } from 'react-redux';
 
 export const About = () => {
     const component = useSelector(state => state.componentReducer.component)
+    let change;
+    
 
     return (
         <section>
             {component === 1 ? <Services /> : null}
         </section>
+
+
     )
 }

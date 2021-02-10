@@ -26,18 +26,20 @@ export const chatFunctionality = (msg) => (dispatch) => {
     // instant and it's actually really creepy.
     // if you take the timeout off the responses will be
     // instantaneous
+
+    const dialogueOptions = store.getState();
+    const msgNumberPC = (dialogueOptions.chatBotReducer.test.length - 4);
+    const previousChat = dialogueOptions.chatBotReducer.test[msgNumberPC]
+
+    const msgNumberPR = (dialogueOptions.chatBotReducer.test.length - 2);
+    const previousResponse = dialogueOptions.chatBotReducer.test[msgNumberPR];
+
+    const jokeOptions = (Math.floor(Math.random() * Math.floor(3)));
+    const quoteOptions = (Math.floor(Math.random() * Math.floor(7)));
+
+    console.log(dialogueOptions);
+    
     setTimeout(() => {
-        const dialogueOptions = store.getState();
-        const msgNumberPC = (dialogueOptions.chatBotReducer.test.length - 4);
-        const previousChat = dialogueOptions.chatBotReducer.test[msgNumberPC]
-
-        const msgNumberPR = (dialogueOptions.chatBotReducer.test.length - 2);
-        const previousResponse = dialogueOptions.chatBotReducer.test[msgNumberPR];
-
-        const jokeOptions = (Math.floor(Math.random() * Math.floor(3)));
-        const quoteOptions = (Math.floor(Math.random() * Math.floor(7)));
-
-        console.log(dialogueOptions);
 
 
         if(msg.message.includes("hi") || msg.message.includes("Hi") || msg.message.includes("hello") || msg.message.includes("Hello") || msg.message.includes("hey") || msg.message.includes("Hey")) {
@@ -47,7 +49,7 @@ export const chatFunctionality = (msg) => (dispatch) => {
             dispatch({ type: CHAT, payload: {message: "Doing well thank you"}});
             dispatch({ type: CHAT, payload: {message: "What's up?"}});
         }else if(msg.message.includes("what's up") || msg.message.includes("whats up")) {
-            dispatch({ type: CHAT, payload: {message: "Well, hello"}});
+            dispatch({ type: CHAT, payload: {message: "Oh, you know."}});
             dispatch({ type: CHAT, payload: {message: "Chilling, yeah."}});
         }else if(msg.message.includes("1")) {
             dispatch({ type: CHAT, payload: {message: "All services are time permitting. Consultations on freelance web design and development projects."}});
