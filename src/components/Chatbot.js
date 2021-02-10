@@ -32,7 +32,7 @@ export const Chatbot = () => {
     }
 
     return (
-        <div>
+        <div className='chatbot__container'>
             <div className='chatbot__messages'>
                 {
                     test.length > 0 ? test.map(msg => {
