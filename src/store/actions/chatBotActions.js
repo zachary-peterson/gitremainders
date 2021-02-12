@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {store} from '../index'
 
 import {
@@ -10,6 +11,8 @@ export const CONVERSATION_ADD = 'CONVERSATION_ADD';
 export const CONVERSATION_MINUS = 'CONVERSATION_MINUS'
 export const CONVERSATION_RESET = 'CONVERSATION_RESET';
 export const RETURN_WILDCARD_INFO = 'RETURN_WILDCARD_INFO';
+export const IS_MEMBER = 'IS_MEMBER';
+export const TEST_PASSWORD = 'TEST_PASSWORD'
 
 
 export const chatFunctionality = (msg) => (dispatch) => {
@@ -28,7 +31,7 @@ export const chatFunctionality = (msg) => (dispatch) => {
     // instantaneous
 
     const dialogueOptions = store.getState();
-    const msgNumberPC = (dialogueOptions.chatBotReducer.test.length - 4);
+    const msgNumberPC = (dialogueOptions.chatBotReducer.test.length - 1);
     const previousChat = dialogueOptions.chatBotReducer.test[msgNumberPC]
 
     const msgNumberPR = (dialogueOptions.chatBotReducer.test.length - 2);
@@ -37,7 +40,9 @@ export const chatFunctionality = (msg) => (dispatch) => {
     const jokeOptions = (Math.floor(Math.random() * Math.floor(3)));
     const quoteOptions = (Math.floor(Math.random() * Math.floor(7)));
 
-    console.log(dialogueOptions);
+    
+    const passwordPossibility = previousChat.message.split('password = ')
+    console.log(passwordPossibility[1])
     
     setTimeout(() => {
 
@@ -88,12 +93,31 @@ export const chatFunctionality = (msg) => (dispatch) => {
             if(msg.message.includes("go")) {
                 dispatch({ type: CHAT, payload: {message: "Okay!"} });
                 dispatch({ type: CHAT, payload: {message: "Coming right up!"} });
-                dispatch({ type: SET_COMPONENT, payload: 1 });
-                dispatch({ type: ADD_TO_VIDEO, payload: 1 });
             }else {
                 dispatch({ type: CHAT, payload: {message: "All services are time permitting. Consultations on freelance web design and development projects."}});
                 dispatch({ type: CHAT, payload: {message: "Open to taking on new film projects, looking for individuals interested in being interviewed."}});
             }
+        }else if(msg.message.includes("password")) {
+
+            dispatch({ type: TEST_PASSWORD });
+
+
+            if(passwordPossibility[1] == "test") {
+                dispatch({ type: CHAT, payload: {message: "Working"} });
+            }
+
+            // axios.post('localhost:2019/',passwordPossibility[1])
+            // .then(res => {
+            //     console.log(res);
+            // })
+            // .catch(err => {
+            //     console.log(err);
+            // })
+
+            dispatch({ type: IS_MEMBER });
+            dispatch({ type: CHAT, payload: {message: "Confirmed"} });
+            // dispatch({ type: SET_COMPONENT, payload: 1 });
+            // dispatch({ type: ADD_TO_VIDEO, payload: 1 });
         }
         else {
             dispatch({ type: CHAT, payload: {message: "Sorry, that response doesn't seem to register."}});

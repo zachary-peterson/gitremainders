@@ -18,6 +18,8 @@ export {
     CONVERSATION_ADD,
     CONVERSATION_MINUS,
     CONVERSATION_RESET,
+    IS_MEMBER,
+    TEST_PASSWORD,
     chatFunctionality
 } from './chatBotActions'
 
@@ -44,5 +46,6 @@ export {
 
 export {
     SET_COMPONENT,
-    COMPONENT_LOADING
+    COMPONENT_LOADING,
+    ADD_COMPONENT
 } from './componentActions'
