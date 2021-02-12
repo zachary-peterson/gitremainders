@@ -3,7 +3,9 @@ import {
     CONVERSATION_ADD,
     CONVERSATION_MINUS,
     CONVERSATION_RESET,
-    RETURN_WILDCARD_INFO
+    RETURN_WILDCARD_INFO,
+    IS_MEMBER,
+    TEST_PASSWORD
 } from '../actions'
 
 const initialState = {
@@ -25,7 +27,9 @@ const initialState = {
             message: '----------'
         },
     ],
-    wildcard: {}
+    wildcard: {},
+    isMember: false,
+    chatLoading: false
 }
 
 export const chatBotReducer = (state = initialState, action) => {
@@ -54,6 +58,16 @@ export const chatBotReducer = (state = initialState, action) => {
             return {
                 ...state,
                 wildcard: state.wildcard
+            }
+        case IS_MEMBER:
+            return {
+                ...state,
+                isMember: true
+            }
+        case TEST_PASSWORD:
+            return {
+                ...state,
+                chatLoading: true
             }
         default:
             return state;
