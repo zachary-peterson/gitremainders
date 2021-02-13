@@ -40,6 +40,7 @@ export const chatFunctionality = (msg) => (dispatch) => {
     const previousResponse = dialogueOptions.chatBotReducer.test[msgNumberPR];
     
     const memberStatus = dialogueOptions.chatBotReducer.isMember;
+    const languageSetting = dialogueOptions.greetingReducer.language;
     
     const jokeOptions = (Math.floor(Math.random() * Math.floor(3)));
     const quoteOptions = (Math.floor(Math.random() * Math.floor(7)));
@@ -73,7 +74,9 @@ export const chatFunctionality = (msg) => (dispatch) => {
         
     setTimeout(() => {
             
-        if(msg.message.startsWith("How") ) {
+        if(msg.message.includes("greeting")) {
+            dispatch({ type: CHAT, payload: {message: dialogueOptions.greetingReducer[languageSetting][jokeOptions]}})
+        } else if(msg.message.startsWith("How") ) {
             dispatch({ type: CHAT, payload: {message: "Boop."}});
         } else if(memberStatus === true) {
             if((msg.message.includes("favorite") && msg.message.includes("color")) || (msg.message.includes("set background") && msg.message.includes("teal"))) {

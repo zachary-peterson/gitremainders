@@ -7,6 +7,7 @@ import { philosophyReducer } from './philosophyReducer';
 import { aboutReducer } from './aboutReducer';
 import { jokesReducer } from './jokesReducer';
 import { componentReducer } from './componentReducer';
+import { greetingReducer } from './greetingReducer';
 
 export const mainReducer = combineReducers({
     heroReducer,
@@ -15,5 +16,6 @@ export const mainReducer = combineReducers({
     philosophyReducer,
     aboutReducer,
     jokesReducer,
-    componentReducer
+    componentReducer,
+    greetingReducer
 })

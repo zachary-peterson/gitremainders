@@ -1,0 +1,3 @@
+export const SET_LANGUAGE = 'SET_LANGUAGE';
+export const ADD_FRENCH_GREETING = 'ADD_FRENCH_GREETING';
+

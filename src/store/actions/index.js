@@ -57,3 +57,8 @@ export {
     setBackgroundColor,
     setBackgroundMode
 } from './componentActions'
+
+export {
+    SET_LANGUAGE,
+    ADD_FRENCH_GREETING
+} from './greetingActions'

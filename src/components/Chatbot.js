@@ -18,7 +18,7 @@ export const Chatbot = () => {
     const messages = useSelector(state => state.chatBotReducer.test)
 
     // console.log(mName);
-    console.log(window.location.pathname)
+    // console.log(window.location.pathname)
 
     const handleChanges = e => {
         e.preventDefault();
