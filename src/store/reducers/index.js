@@ -9,6 +9,7 @@ import { jokesReducer } from './jokesReducer';
 import { componentReducer } from './componentReducer';
 import { greetingReducer } from './greetingReducer';
 
+
 export const mainReducer = combineReducers({
     heroReducer,
     dateReducer,
@@ -17,5 +18,6 @@ export const mainReducer = combineReducers({
     aboutReducer,
     jokesReducer,
     componentReducer,
-    greetingReducer
+    greetingReducer,
+    
 })

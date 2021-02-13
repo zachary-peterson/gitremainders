@@ -12,6 +12,7 @@ export {
     RETURN_DAY_NAME,
     SET_DAY_NAME,
     SET_MONTH_NAME,
+    SET_TEMP,
     setDayOfWeek,
     setMonth
 } from './dateActions';
@@ -62,3 +63,4 @@ export {
     SET_LANGUAGE,
     ADD_FRENCH_GREETING
 } from './greetingActions'
+

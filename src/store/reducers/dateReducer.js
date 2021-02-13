@@ -3,7 +3,8 @@ import {
     RETURN_MONTH_NAME,
     RETURN_DAY_NAME,
     SET_DAY_NAME,
-    SET_MONTH_NAME
+    SET_MONTH_NAME,
+    SET_TEMP
 } from '../actions'
 
 const initialState = {
@@ -11,7 +12,8 @@ const initialState = {
     month: (new Date().getMonth() + 1),
     year: 2021,
     mName: 'January',
-    dName: 'Sunday'
+    dName: 'Sunday',
+    temperature: 0
 }
 
 export const dateReducer = (state = initialState, action) => {
@@ -42,6 +44,11 @@ export const dateReducer = (state = initialState, action) => {
             return {
                 ...state,
                 mName: action.payload
+            }
+        case SET_TEMP:
+            return {
+                ...state,
+                temperature: action.payload
             }
         default:
             return state;

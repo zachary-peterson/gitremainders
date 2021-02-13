@@ -3,6 +3,7 @@ export const RETURN_MONTH_NAME = 'RETURN_MONTH_NAME';
 export const RETURN_DAY_NAME = 'RETURN_DAY_NAME';
 export const SET_DAY_NAME = 'SET_DAY_NAME';
 export const SET_MONTH_NAME = 'SET_MONTH_NAME';
+export const SET_TEMP = 'SET_TEMP';
 
 export const setDayOfWeek = () => (dispatch) => {
     let day;
