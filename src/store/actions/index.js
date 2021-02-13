@@ -9,7 +9,11 @@ export {
 export {
     RETURN_DATE,
     RETURN_MONTH_NAME,
-    RETURN_DAY_NAME
+    RETURN_DAY_NAME,
+    SET_DAY_NAME,
+    SET_MONTH_NAME,
+    setDayOfWeek,
+    setMonth
 } from './dateActions';
 
 export {
@@ -49,5 +53,7 @@ export {
     COMPONENT_LOADING,
     ADD_COMPONENT,
     SET_BACKGROUND,
-    setBackgroundColor
+    SET_MODE,
+    setBackgroundColor,
+    setBackgroundMode
 } from './componentActions'

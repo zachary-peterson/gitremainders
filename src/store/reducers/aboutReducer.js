@@ -10,6 +10,9 @@ const initialState = {
     age: 27,
     dob: "09/05/1993",
     location: "NY",
+    zipcode: "14903",
+    lat: 49.0898,
+    lon: 76.8077,
     email: "zachary@zpwrites.com"
 }
 

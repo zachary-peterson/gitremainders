@@ -2,7 +2,8 @@ import {
     SET_COMPONENT,
     COMPONENT_LOADING,
     ADD_COMPONENT,
-    SET_BACKGROUND
+    SET_BACKGROUND,
+    SET_MODE
 } from '../actions'
 
 const initialState = {
@@ -16,7 +17,8 @@ const initialState = {
             alt: 'alternate description'
         },
     ],
-    background: ''
+    background: '',
+    backgroundMode: 'movieMode'
 }
 
 export const componentReducer = (state = initialState, action) => {
@@ -40,6 +42,11 @@ export const componentReducer = (state = initialState, action) => {
             return {
                 ...state,
                 background: action.payload
+            }
+        case SET_MODE:
+            return {
+                ...state,
+                backgroundMode: action.payload
             }
         default: 
             return state;

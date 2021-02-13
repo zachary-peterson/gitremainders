@@ -9,16 +9,14 @@ const initialState = {
         p2: "I find them remarkable"
     },
     j2: {
-        q: "Why was King Arthur's army too tired to fight?",
-        a: "It had too many sleepless knights"
+        p1: "Why was King Arthur's army too tired to fight?",
+        p2: "It had too many sleepless knights"
     },
     j3: {
-        q: "Which country's capital had the fastest growing population?",
-        a: "Ireland. Every day it's Dublin."
+        p1: "Which country's capital had the fastest growing population?",
+        p2: "Ireland. Every day it's Dublin."
     },
     j4: {
-        q: "",
-        a: "",
         p1: "",
         p2: ""
     }

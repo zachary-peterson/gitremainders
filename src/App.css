@@ -67,3 +67,14 @@ body {
   height: 2vh;
   width: 100vw;
 }
+
+.bookMode {
+  width: 45%;
+  flex-direction: row;
+  
+}
+
+.movieMode {
+  width: 100%;
+  flex-direction: column;
+}

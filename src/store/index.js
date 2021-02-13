@@ -5,7 +5,8 @@ import thunk from 'redux-thunk';
 import {mainReducer} from './reducers';
 
 export {
-    chatFunctionality
+    chatFunctionality,
+    setDayOfWeek
 } from './actions'
 
 export const store = createStore(mainReducer, applyMiddleware(thunk, logger))
