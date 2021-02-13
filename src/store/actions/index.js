@@ -47,5 +47,7 @@ export {
 export {
     SET_COMPONENT,
     COMPONENT_LOADING,
-    ADD_COMPONENT
+    ADD_COMPONENT,
+    SET_BACKGROUND,
+    setBackgroundColor
 } from './componentActions'

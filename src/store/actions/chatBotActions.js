@@ -3,7 +3,8 @@ import {store} from '../index'
 
 import {
     SET_COMPONENT,
-    ADD_TO_VIDEO
+    ADD_TO_VIDEO,
+    SET_BACKGROUND
 } from './index';
 
 export const CHAT = 'CHAT';
@@ -37,6 +38,8 @@ export const chatFunctionality = (msg) => (dispatch) => {
     const msgNumberPR = (dialogueOptions.chatBotReducer.test.length - 2);
     const previousResponse = dialogueOptions.chatBotReducer.test[msgNumberPR];
 
+    const memberStatus = dialogueOptions.chatBotReducer.isMember;
+
     const jokeOptions = (Math.floor(Math.random() * Math.floor(3)));
     const quoteOptions = (Math.floor(Math.random() * Math.floor(7)));
 
@@ -44,10 +47,32 @@ export const chatFunctionality = (msg) => (dispatch) => {
     const passwordPossibility = previousChat.message.split('password = ')
     console.log(passwordPossibility[1])
     
+    const bgColor = previousChat.message.split('set background ')
+    console.log(bgColor[1]);
+
+    // if(dialogueOptions.chatBotReducer.test.length >= 12) {
+    //     dialogueOptions.chatBotReducer.test.shift();
+    //     dialogueOptions.chatBotReducer.test.shift();
+    //     dialogueOptions.chatBotReducer.test.shift();
+    // }
+
+    if(dialogueOptions.chatBotReducer.test.length >= 12) {
+        for(let i = 0; i < 3; i++) {
+            dialogueOptions.chatBotReducer.test.shift();
+        }
+    }
+    
     setTimeout(() => {
 
-
-        if(msg.message.includes("hi") || msg.message.includes("Hi") || msg.message.includes("hello") || msg.message.includes("Hello") || msg.message.includes("hey") || msg.message.includes("Hey")) {
+        if(memberStatus === true) {
+            if((msg.message.includes("favorite") && msg.message.includes("color")) || msg.message.includes("set background") && msg.message.includes("teal")) {
+                dispatch({ type: CHAT, payload: {message: "My favorite color is teal."}});
+                dispatch({ type: CHAT, payload: {message: "Maybe the background should match?"}});
+                dispatch({ type: SET_BACKGROUND, payload: "tealMode" });
+            }else if(msg.message.includes("set background")) {
+                dispatch({ type: SET_BACKGROUND, payload: bgColor })
+            }
+        } else if(msg.message.includes("hi") || msg.message.includes("Hi") || msg.message.includes("hello") || msg.message.includes("Hello") || msg.message.includes("hey") || msg.message.includes("Hey")) {
             dispatch({ type: CHAT, payload: {message: "Hello, World"}});
             dispatch({ type: CHAT, payload: {message: "How are you?"}});
         } else if(msg.message.includes("are you") || (previousResponse.message === "How are you?" && msg.message.includes("you"))) {

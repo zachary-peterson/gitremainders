@@ -1,7 +1,8 @@
 import {
     SET_COMPONENT,
     COMPONENT_LOADING,
-    ADD_COMPONENT
+    ADD_COMPONENT,
+    SET_BACKGROUND
 } from '../actions'
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
             alt: 'alternate description'
         },
     ],
+    background: ''
 }
 
 export const componentReducer = (state = initialState, action) => {
@@ -33,6 +35,11 @@ export const componentReducer = (state = initialState, action) => {
             return {
                 ...state,
                 components: [...state.components, action.payload]
+            }
+        case SET_BACKGROUND:
+            return {
+                ...state,
+                background: action.payload
             }
         default: 
             return state;

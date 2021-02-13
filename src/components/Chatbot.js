@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { chatFunctionality } from '../store';
 
@@ -15,6 +15,7 @@ export const Chatbot = () => {
     const dispatch = useDispatch();
     const counter = useSelector(state => state.chatBotReducer.counter)
     const mName = useSelector(state => state.dateReducer.mName);
+    const messages = useSelector(state => state.chatBotReducer.test)
 
     // console.log(mName);
 
@@ -30,6 +31,10 @@ export const Chatbot = () => {
         dispatch(chatFunctionality(chatFunction));
         setChatFunction(form)
     }
+
+    console.log(window)
+
+    
 
     return (
         <div className='chatbot__container'>

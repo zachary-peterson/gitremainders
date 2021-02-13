@@ -2,19 +2,26 @@ import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetSlider, sliderTransition } from '../store/actions';
 import { Chatbot } from './Chatbot';
-import img from '../assets/ZipConsulting.png';
-import axios from 'axios';
+import imageOne from '../assets/ZipConsulting.png';
+import styled from 'styled-components';
 import { About } from './About';
 
 const form = {
     terms: ''
 }
 
+const Container = styled.section`
+    width: ${window.innerWidth}
+    height: ${window.innerHeight}
+    
+
+`
 
 export const Landing = () => {
     const [formValues, setFormValues] = useState(form);
     const dispatch = useDispatch();
     const video = useSelector(state => state.heroReducer.video)
+    const background = useSelector(state => state.componentReducer.background)
 
     // const fname = useSelector(state => state.aboutReducer.fname)
     
@@ -28,12 +35,22 @@ export const Landing = () => {
     //     }, 15000);
     // }, [video])
 
-    
+    let backgroundWidth;
+
+    if(window.innerWidth < 600) {
+        backgroundWidth = '200px'
+    }else if(window.innerWidth < 1200) {
+        backgroundWidth = '300px'
+    }else {
+        backgroundWidth = '400px'
+    }
+
+    // console.log(backgroundWidth);
     
     return (
-        <>
-            <header>
-                <img src={img} alt="Zip Consulting Logo" />
+        <Container className={background}>
+
+            <header className='block' style={{ 'backgroundColor': `#` + background[1] }}>
             </header>
 
             <section>
@@ -65,9 +82,11 @@ export const Landing = () => {
 
             {video === 1 ? <About /> : null}
             
-            <footer>
-
+            <br/>
+            <footer className="main__logo">
+                <img src={imageOne} alt="Zip Consulting Logo" width={backgroundWidth} />
             </footer>
-        </>
+
+        </Container>
     )
 }
