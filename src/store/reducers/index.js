@@ -5,9 +5,8 @@ import { dateReducer } from './dateReducer';
 import { chatBotReducer } from './chatBotReducer';
 import { philosophyReducer } from './philosophyReducer';
 import { aboutReducer } from './aboutReducer';
-import { jokesReducer } from './jokesReducer';
 import { componentReducer } from './componentReducer';
-import { greetingReducer } from './greetingReducer';
+import { languageReducer } from './languageReducer';
 
 
 export const mainReducer = combineReducers({
@@ -16,8 +15,7 @@ export const mainReducer = combineReducers({
     chatBotReducer,
     philosophyReducer,
     aboutReducer,
-    jokesReducer,
     componentReducer,
-    greetingReducer,
+    languageReducer,
     
 })

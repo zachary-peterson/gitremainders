@@ -6,74 +6,57 @@ export const SET_MONTH_NAME = 'SET_MONTH_NAME';
 export const SET_TEMP = 'SET_TEMP';
 
 export const setDayOfWeek = () => (dispatch) => {
-    let day;
+  const date = (new Date().getDay());
+  let day;
 
-    switch (new Date().getDay()) {
-        case 0:
-          day = "Sunday";
-          break;
-        case 1:
-          day = "Monday";
-          break;
-        case 2:
-           day = "Tuesday";
-          break;
-        case 3:
-          day = "Wednesday";
-          break;
-        case 4:
-          day = "Thursday";
-          break;
-        case 5:
-          day = "Friday";
-          break;
-        case 6:
-          day = "Saturday";
-      }
+    if(date === 0){
+      day = "Sunday";
+    }else if(date === 1){
+      day = "Monday";
+    }else if(date === 2){
+      day = "Tuesday";
+    }else if(date === 3){
+      day = "Wednesday";
+    }else if(date === 4){
+      day = "Thursday";
+    }else if(date === 5){
+      day = "Friday";
+    }else if(date === 6){
+      day = "Saturday";
+    }
 
     dispatch({ type: SET_DAY_NAME, payload: day });
 };
 
 export const setMonth = () => (dispatch) => {
-    let month;
+  const date = (new Date().getMonth());
+  let month;
 
-      switch (new Date().getMonth()) {
-        case 0:
-          month = "January";
-          break;
-        case 1:
-          month = "February";
-          break;
-        case 2:
-           month = "March";
-          break;
-        case 3:
-          month = "April";
-          break;
-        case 4:
-          month = "May";
-          break;
-        case 5:
-          month = "June";
-          break;
-        case 6:
-          month = "July";
-          break;
-        case 7:
-          month = "August";
-          break;
-        case 8:
-          month = "September";
-          break;
-        case 9:
-          month = "October";
-          break;
-        case 10:
-          month = "November";
-          break;
-        case 11:
-          month = "December";
-          break;
-      }
+    if (date === 0){
+      month = "January";
+    }else if(date === 1){
+      month = "February";
+    }else if(date === 2){
+      month = "March";
+    }else if(date === 3){
+      month = "April";
+    }else if(date === 4){
+      month = "May";
+    }else if(date === 5){
+      month = "June";
+    }else if(date === 6){
+      month = "July";
+    }else if(date === 7){
+      month = "August";
+    }else if(date === 8){
+      month = "September";
+    }else if(date === 9){
+      month = "October";
+    }else if(date === 10){
+      month = "November";
+    }else if(date === 11){
+      month = "December";
+    }
+
     dispatch({ type: SET_MONTH_NAME, payload: month })
 }

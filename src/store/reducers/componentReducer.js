@@ -1,24 +1,13 @@
 import {
     SET_COMPONENT,
     COMPONENT_LOADING,
-    ADD_COMPONENT,
     SET_BACKGROUND,
-    SET_MODE
 } from '../actions'
 
 const initialState = {
     component: '',
     componentLoading: false,
-    components: [
-        {
-            name: 'Test',
-            description: 'Test',
-            link: 'https://images.unsplash.com/photo-1612976958534-e01dda4a1a29?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-            alt: 'alternate description'
-        },
-    ],
     background: '',
-    backgroundMode: 'movieMode'
 }
 
 export const componentReducer = (state = initialState, action) => {
@@ -33,20 +22,10 @@ export const componentReducer = (state = initialState, action) => {
                 ...state,
                 componentLoading: true
             }
-        case ADD_COMPONENT:
-            return {
-                ...state,
-                components: [...state.components, action.payload]
-            }
         case SET_BACKGROUND:
             return {
                 ...state,
                 background: action.payload
-            }
-        case SET_MODE:
-            return {
-                ...state,
-                backgroundMode: action.payload
             }
         default: 
             return state;

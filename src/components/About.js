@@ -1,5 +1,6 @@
 import React from 'react';
 import { Services } from './Services';
+import { Resources } from './Resources';
 import { useSelector } from 'react-redux';
 
 export const About = () => {
@@ -9,7 +10,7 @@ export const About = () => {
 
     return (
         <section>
-            {component === 1 ? <Services /> : null}
+            {component === 1 ? <Services /> : component === 2 ? <Resources /> : null}
         </section>
 
 

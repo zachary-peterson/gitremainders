@@ -52,11 +52,6 @@ body {
   height: 100vh;
 }
 
-.tealMode {
-  height: 100vh;
-  background-color: #3b6064;
-}
-
 .main__logo {
   display: flex;
   justify-content: center;
@@ -68,13 +63,3 @@ body {
   width: 100vw;
 }
 
-.bookMode {
-  width: 45%;
-  flex-direction: row;
-  
-}
-
-.movieMode {
-  width: 100%;
-  flex-direction: column;
-}

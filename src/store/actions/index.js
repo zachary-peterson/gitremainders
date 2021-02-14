@@ -1,5 +1,5 @@
 export {
-    ADD_TO_VIDEO,
+    SET_VIDEO,
     IS_LOADING,
     RESET_VIDEO,
     sliderTransition,
@@ -29,11 +29,6 @@ export {
 } from './chatBotActions'
 
 export {
-    RESULTS_RES,
-    LOADING_SEARCH_RES
-} from './searchActions'
-
-export {
     RETURN_INFORMATION,
     PHILOSOPHY_ERRORS,
 } from './philosophyActions';
@@ -45,22 +40,14 @@ UPDATE_AGE
 } from './aboutActions'
 
 export {
-    TELL_A_JOKE,
-    RESET_JOKE
-} from './jokesActions'
-
-export {
     SET_COMPONENT,
     COMPONENT_LOADING,
-    ADD_COMPONENT,
     SET_BACKGROUND,
-    SET_MODE,
-    setBackgroundColor,
-    setBackgroundMode
+    setBackgroundColor
 } from './componentActions'
 
 export {
     SET_LANGUAGE,
     ADD_FRENCH_GREETING
-} from './greetingActions'
+} from './languageActions'
 
